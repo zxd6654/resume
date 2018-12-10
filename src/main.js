@@ -11,6 +11,10 @@ import '../static/css/reset.css'
 import echarts from 'echarts';
 Vue.prototype.$echarts=echarts;
 
+// 引入及使用 ElementUI
+import {Row, Col} from 'element-ui';
+Vue.use(Row).use(Col);
+
 Vue.config.productionTip = false;
 
 new Vue({
