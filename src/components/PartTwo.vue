@@ -16,7 +16,7 @@
         data() {
             return {};
         },
-        mounted() {
+        mounted() {    //   刷新页面（页面加载）的时候，调用
           this.drawECharts();
         },
         methods: {
