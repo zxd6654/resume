@@ -10,6 +10,8 @@ const PartFour = () => import('@/components/PartFour');
 const PartFive = () => import('@/components/PartFive');
 const PartSix = () => import('@/components/PartSix');
 const PartSeven = () => import('@/components/PartSeven');
+const PartEight=()=>import('@/components/PartEight');
+const PartNine=()=>import('@/components/PartNine');
 
 export default new Router({
     routes: [
@@ -22,7 +24,9 @@ export default new Router({
                 PartFour: PartFour,
                 PartFive: PartFive,
                 PartSix: PartSix,
-                PartSeven: PartSeven
+                PartSeven: PartSeven,
+                PartEight:PartEight,
+                PartNine:PartNine,
             }
         },
         {
@@ -59,6 +63,16 @@ export default new Router({
             path: '/PartSeven',
             name: 'PartSeven',
             component: PartSeven
+        },
+        {
+            path: '/PartEight',
+            name: 'PartEight',
+            component: PartEight
+        },
+        {
+            path: '/PartNine',
+            name: 'PartNine',
+            component: PartNine
         },
     ]
 })

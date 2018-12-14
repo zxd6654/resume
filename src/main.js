@@ -9,17 +9,19 @@ import '../static/css/reset.css'
 
 //引入echarts
 import echarts from 'echarts';
-Vue.prototype.$echarts=echarts;
+
+Vue.prototype.$echarts = echarts;
 
 // 引入及使用 ElementUI
 import {Row, Col} from 'element-ui';
+
 Vue.use(Row).use(Col);
 
 Vue.config.productionTip = false;
 
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: {App},
+    template: '<App/>'
 });

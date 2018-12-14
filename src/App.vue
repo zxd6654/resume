@@ -33,6 +33,15 @@
                 <router-view name="PartSeven"/>
             </el-col>
         </el-row>
+        <!--第三行-->
+        <el-row>
+            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                <router-view name="PartEight"/>
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                <router-view name="PartNine"/>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
