@@ -17,7 +17,7 @@
             drawECharts() {
                 let option = {
                     title: {
-                        text: '浏览器占比变化',
+                        text: '浏览器使用占比',
                         subtext: '纯属虚构',
                         top: 10,
                         left: 10
