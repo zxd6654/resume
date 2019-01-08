@@ -5,6 +5,7 @@
         <p class="font-small"><span class="font-bold">后端：</span>了解Node、PHP</p>
         <p class="font-small"><span class="font-bold">打包工具：</span>webpack</p>
         <p class="font-small"><span class="font-bold">前端单元测试框架：</span>jasmine</p>
+        <p class="font-small"><span class="font-bold">项目管理工具：</span>git，svn</p>
     </div>
 </template>
 
