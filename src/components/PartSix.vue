@@ -3,7 +3,8 @@
         <h3 class="text-center">编程技能</h3>
         <p class="font-small"><span class="font-bold">前端：</span>HTML/HTML5、CSS/CSS3、JS/ES6、jQuery、Vue、微信小程序……</p>
         <p class="font-small"><span class="font-bold">后端：</span>了解Node、PHP</p>
-        <p class="font-small"><span class="font-bold">其他：</span>webpack</p>
+        <p class="font-small"><span class="font-bold">打包工具：</span>webpack</p>
+        <p class="font-small"><span class="font-bold">前端单元测试框架：</span>jasmine</p>
     </div>
 </template>
 
