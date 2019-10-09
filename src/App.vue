@@ -1,82 +1,91 @@
 <template>
-    <div class="app" id="app">
-        <div class="banner">
-            <!--<img class="hidden-md-only hidden-lg-only hidden-xl-only" :src="bannerXSSM" alt="banner 图">-->
-            <!--<img class="hidden-xs-only hidden-sm-only hidden-lg-only hidden-xl-only" :src="bannerMD" alt="banner 图">-->
-            <img class="hidden-xs-only hidden-sm-only hidden-md-only" :src="bannerLGXL" alt="banner 图">
-        </div>
-
-        <!-- 第一行 -->
-        <el-row>
-            <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
-                <router-view name="PartOne"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" class="part">
-                <router-view name="PartTwo"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
-                <router-view name="PartThree"/>
-            </el-col>
-        </el-row>
-        <!-- 第二行 -->
-        <el-row>
-            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
-                <router-view name="PartFour"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
-                <router-view name="PartFive"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
-                <router-view name="PartSix"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
-                <router-view name="PartSeven"/>
-            </el-col>
-        </el-row>
-        <!--第三行-->
-        <el-row>
-            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-                <router-view name="PartEight"/>
-            </el-col>
-            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-                <router-view name="PartNine"/>
-            </el-col>
-        </el-row>
+  <div class="app" id="app">
+    <div class="banner">
+      <!--<img class="hidden-md-only hidden-lg-only hidden-xl-only" :src="bannerXSSM" alt="banner 图">-->
+      <!--<img class="hidden-xs-only hidden-sm-only hidden-lg-only hidden-xl-only" :src="bannerMD" alt="banner 图">-->
+      <img class="hidden-xs-only hidden-sm-only hidden-md-only" :src="bannerLGXL" alt="banner 图" />
     </div>
+
+    <!-- 第一行 -->
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
+        <router-view name="PartOne" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" class="part">
+        <router-view name="PartTwo" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
+        <router-view name="PartThree" />
+      </el-col>
+    </el-row>
+    <!-- 第二行 -->
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
+        <router-view name="PartFour" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
+        <router-view name="PartFive" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
+        <router-view name="PartSix" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
+        <router-view name="PartSeven" />
+      </el-col>
+    </el-row>
+    <!--第三行-->
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <router-view name="PartEight" />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <router-view name="PartNine" />
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'App',
-        data() {
-            return {
-//                bannerXSSM: require("./assets/img/banner_640.png"),
-//                bannerMD: require("./assets/img/banner_1000.png"),
-                bannerLGXL: require("./assets/img/banner.png"),
-            };
+export default {
+  name: "App",
+  data() {
+    return {
+      //                bannerXSSM: require("./assets/img/banner_640.png"),
+      //                bannerMD: require("./assets/img/banner_1000.png"),
+      bannerLGXL: require("./assets/img/banner.png"),
+      title: "朱晓东简历"
+    };
+  },
 
-        }
+  methods: {
+    toGetPdf() {
+      /* 这行代码很重要，它让页面的滚动条跳到了最上方
+　　　　　　如果点击打印按钮的时候,滚动条没有在最上方,打印内容会是不完整的
+　　　　　　当然,用起来体验也会差一点,如果你有更好的办法,
+　　　　　　欢迎来评论区,我们一起探讨*/
+      window.scrollTo(0, 0);
+      this.getPdf(this.$el.id, this.title);
     }
+  }
+};
 </script>
 
 <style>
-    body {
-        background: #011128;
-        color: #fff;
-    }
+body {
+  background: #011128;
+  color: #fff;
+}
 
-    .app {
-        width: 100%;
-    }
+.app {
+  width: 100%;
+}
 
-    .part {
-        padding: 20px;
-    }
+.part {
+  padding: 20px;
+}
 
-    .banner img {
-        width: 100%;
-        height: 80px;
-    }
-
-
+.banner img {
+  width: 100%;
+  height: 80px;
+}
 </style>

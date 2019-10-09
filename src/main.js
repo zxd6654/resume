@@ -13,15 +13,23 @@ import echarts from 'echarts';
 Vue.prototype.$echarts = echarts;
 
 // 引入及使用 ElementUI
-import {Row, Col} from 'element-ui';
+import {
+  Row,
+  Col,
+  Button
+} from 'element-ui';
 
-Vue.use(Row).use(Col);
+import htmlToPdf from './common/htmlPdf';
+
+Vue.use(Row).use(Col).use(Button).use(htmlToPdf);
 
 Vue.config.productionTip = false;
 
 new Vue({
-    el: '#app',
-    router,
-    components: {App},
-    template: '<App/>'
+  el: '#app',
+  router,
+  components: {
+    App
+  },
+  template: '<App/>'
 });
